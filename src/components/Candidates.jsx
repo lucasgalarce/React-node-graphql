@@ -1,16 +1,25 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
-import candidates from '../candidates.json'
+import mockCandidates from '../candidates.json'
 
 const Candidates = () => {
+
+    const [candidates, setCandidates] = useState([]);
+
+    useEffect(() => {
+        setCandidates(mockCandidates)
+
+    }, []);
+
     return (
         <ul>
             {candidates.map( candidate => 
                 <li key={candidate.id}> {candidate.name} 
                     <button>Download</button>
-                    <button>Delsete</button>
+                    <button>Delete</button>
                 </li>)
             }
+
         </ul>
     )
 }
