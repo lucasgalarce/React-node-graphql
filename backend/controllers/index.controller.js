@@ -83,24 +83,27 @@ const deleteUser = async (req, res) => {
     }
 }
 
-// const editUser = async () => {
-//     try {
-//         const text = 'UPDATE users SET username = $1 WHERE username = $2';
-//         const values = ['lucas', 'jon'];
+const editUser = async (req, res) => {
+    try {
 
-//         const res = await pool.query(text, values);
-//         console.log(res)
-//         pool.end(); // quitar en prod
+        const { id } = req.body
+        const text = 'UPDATE users SET name = $1 WHERE id = $2';
+        const values = ['lucas', id];
+
+        await pool.query(text, values);
+
+        res.json({
+            Message: `User ${id} edited`,
+        })
         
-//     } catch (e) {
-//         console.log(e)
-//     }
-// }
-
-
+    } catch (e) {
+        console.log(e)
+    }
+}
 
 module.exports = {
     getUsers,
     addUser,
     deleteUser,
+    editUser,
 }
