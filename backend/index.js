@@ -1,4 +1,7 @@
 const express = require('express');
+const { graphqlHTTP } = require('express-graphql');
+const schema = require('./schema');
+
 const app = express();
 
 // middlewares
@@ -8,5 +11,10 @@ app.use(express.urlencoded({extended: false}))
 // routes
 app.use(require('./routes/index'));
 
-app.listen(3000)
-console.log('server on port 3000')
+app.use('/graphql', graphqlHTTP({
+    graphiql: true,
+    schema
+}));
+
+app.listen(3000);
+console.log('server on port 3000');
