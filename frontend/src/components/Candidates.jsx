@@ -1,13 +1,24 @@
 import React, {useState, useEffect} from 'react';
 
-import mockCandidates from '../candidates.json'
+import { graphql } from 'react-apollo'
+import { gql } from 'apollo-boost';
 
-const Candidates = () => {
+const fetchedCandidates = graphql(gql` 
+    {
+        Users {
+            email
+            name
+        }
+    }
+`);
+
+
+const CandidatesComponent = ({ data: { Users = [] }  } ) => {
 
     const [candidates, setCandidates] = useState([]);
 
     useEffect(() => {
-        setCandidates(mockCandidates)
+        setCandidates(Users)
 
     }, []);
 
@@ -24,4 +35,4 @@ const Candidates = () => {
     )
 }
 
-export default Candidates;
+export const Candidates = fetchedCandidates(CandidatesComponent)

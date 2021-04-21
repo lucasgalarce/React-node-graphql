@@ -1,8 +1,5 @@
 import React from 'react';
-
-import candidates from '../candidates.json'
-
-import Candidates from './Candidates'
+import { Candidates } from './Candidates'
 
 const Grid = () => {
     return (
