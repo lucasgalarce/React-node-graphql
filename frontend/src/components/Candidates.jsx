@@ -25,8 +25,8 @@ const CandidatesComponent = ({ data: { Users = [] }  } ) => {
     return (
         <ul>
             {candidates.map( candidate => 
-                <li key={candidate.id}> {candidate.name} 
-                    <button>Download</button>
+                <li key={candidate._id}> {candidate.name} - {candidate.email}
+                    <button>Download CV</button>
                     <button>Delete</button>
                 </li>)
             }

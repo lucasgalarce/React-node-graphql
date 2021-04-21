@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 function Login() {
-  const [candidates, setCandidates] = useState([]);
+  // const [candidates, setCandidates] = useState([]);
 
   // fetch.query.then( response => setCandidates(response))
 
