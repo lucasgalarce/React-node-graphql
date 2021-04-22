@@ -1,16 +1,20 @@
 import './App.css';
+import { Router } from '@reach/router';
 
 // Components
 import Login from './components/Login';
-import Home from './components/Home'
-import UserForm from './components/UserForm.jsx'
+import { Home } from './pages/Home'
+
 
 function App() {
   return (
     <div className="App">
-      <Login/>
-      <Home/>
-      <UserForm/>
+      <Router>
+        <Home path="/" />
+        <Home path="/home" />
+        <Login path="/login" />
+      </Router>
+        {/* */}
     </div>
   );
 }
