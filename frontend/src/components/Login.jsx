@@ -1,9 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 function Login() {
-  // const [candidates, setCandidates] = useState([]);
-
-  // fetch.query.then( response => setCandidates(response))
 
   return (
     <form className="Login">

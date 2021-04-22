@@ -1,13 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
 import { graphql } from 'react-apollo'
 import { gql } from 'apollo-boost';
 
 const fetchedCandidates = graphql(gql` 
-    {
+query fetchedCandidates {
         Users {
             email
             name
+            _id
         }
     }
 `);
@@ -15,16 +16,9 @@ const fetchedCandidates = graphql(gql`
 
 const CandidatesComponent = ({ data: { Users = [] }  } ) => {
 
-    const [candidates, setCandidates] = useState([]);
-
-    useEffect(() => {
-        setCandidates(Users)
-
-    }, []);
-
     return (
         <ul>
-            {candidates.map( candidate => 
+            {Users.map( candidate => 
                 <li key={candidate._id}> {candidate.name} - {candidate.email}
                     <button>Download CV</button>
                     <button>Delete</button>

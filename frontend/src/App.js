@@ -14,7 +14,6 @@ function App() {
         <Home path="/home" />
         <Login path="/login" />
       </Router>
-        {/* */}
     </div>
   );
 }

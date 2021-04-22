@@ -5,7 +5,7 @@ const Grid = () => {
     return (
         <div>
             <Candidates/>
-            <button>New user</button>
+            {/* <Button variant="primary">New user</Button> */}
         </div>
     )
 }
