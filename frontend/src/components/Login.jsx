@@ -1,14 +1,10 @@
 import React from 'react';
-
+import Navbar from './NavigationBar'
 function Login() {
 
   return (
-    <form className="Login">
-      <h1>Login</h1>
-      <input type="text"/>
-      <input type="password"/>
-    </form>
-  );
+    <Navbar />
+  )
 }
 
 export default Login;
