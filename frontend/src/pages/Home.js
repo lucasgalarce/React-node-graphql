@@ -6,9 +6,7 @@ import Navbar from '../components/NavigationBar'
 export const Home = () => {
     return (
         <div>
-            <Navbar />
             <Grid/>
-            {/* <UserForm/>  */}
         </div>
     )
 }

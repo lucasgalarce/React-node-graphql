@@ -34,7 +34,7 @@ const UserForm = () => {
                         </Form.Group>
 
                         <Button variant="primary" type="submit">
-                            Register
+                            Save
                         </Button>
                     </Form>
 
